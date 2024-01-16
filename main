@@ -1,0 +1,75 @@
+let contacts = [
+  {
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "Curabitur.egestas.nunc@nonummyac.co.uk",
+  },
+  {
+    name: "Raja Villarreal",
+    phone: "0866 398 2895",
+    email: "posuere.vulputate@sed.com",
+  },
+  {
+    name: "Helen Richards",
+    phone: "0800 1111",
+    email: "libero@convallis.edu",
+  },
+];
+
+function add() {
+  var name2 = prompt("name: ");
+  var phone2 = prompt("phone: ");
+  var email2 = prompt("email: ");
+
+  let newContact = {
+    name: name2,
+    phone: phone2,
+    email: email2,
+  };
+
+  contacts.push(newContact);
+
+  for (var i = 0; i < contacts.length; i++) {
+    console.log(
+      contacts[i].name,
+      contacts[i].phone,
+      contacts[i].email
+    );
+  }
+}
+
+function main() {
+  let choose;
+  while (true) {
+    choose = prompt(
+      "Choose option: 1 to see the first one, 2 to see the last one, 3 to add someone, 4 to exit"
+    );
+
+    switch (choose) {
+      case "1":
+        console.log(
+          contacts[0].name,
+          contacts[0].phone,
+          contacts[0].email
+        );
+        break;
+      case "2":
+        let final = contacts.length - 1;
+        console.log(
+          contacts[final].name,
+          contacts[final].phone,
+          contacts[final].email
+        );
+        break;
+      case "3":
+        add();
+        break;
+      case "4":
+        return; // Salir del bucle while y finalizar la ejecución
+      default:
+        console.log("Opción no válida. Inténtalo de nuevo.");
+    }
+  }
+}
+
+main();
